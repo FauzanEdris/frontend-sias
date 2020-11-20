@@ -1,0 +1,23 @@
+{
+  "name": "frontend-sias",
+  "version": "1.0.0",
+  "description": "Frontend for Sistem Informasi Asisten Dosen",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \\\"Error: no test specified\\\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FauzanEdris/frontend-sias.git"
+  },
+  "keywords": [
+    "Frontend",
+    "SIAS"
+  ],
+  "author": "Fauzan Edris <fauzanedris@yahoo.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/FauzanEdris/frontend-sias/issues"
+  },
+  "homepage": "https://github.com/FauzanEdris/frontend-sias#readme"
+}
