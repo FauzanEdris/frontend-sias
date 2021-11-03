@@ -47,7 +47,7 @@ export default {
     // https://go.nuxtjs.dev/bootstrap
     'bootstrap-vue/nuxt',
     // Doc: https://github.com/js-cookie/js-cookie/tree/latest#readme
-    'js-cookie',
+    // 'js-cookie',
     'cookieparser',
     'nuxt-socket-io',
     // https://go.nuxtjs.dev/axios
@@ -65,19 +65,14 @@ export default {
     proxy: true
   },
   proxy: {
-    // '/api': 'http://192.168.217.1:3000'
-    // '/api': 'http://192.168.43.131:3000/'
-    '/api': 'http://localhost:3000'
-    // '/api': 'http://10.164.236.241:3000'
+    '/api/': { target: process.env.HOST_SERVER || '', pathRewrite: { '^/api/': '/api/v1/' } }
 
   },
   io: {
     // module options
     sockets: [{
       name: 'main',
-      // url: 'http://192.168.43.131:3000'
-      url: 'http://localhost:3000'
-      // url: 'http://10.164.236.241:3000'
+      url: process.env.HOST_SERVER
     }]
   },
   // Build Configuration (https://go.nuxtjs.dev/config-build)
