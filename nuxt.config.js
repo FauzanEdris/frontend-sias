@@ -4,7 +4,9 @@ export default {
     host: '0.0.0.0' // default: localhost,
   },
   mode: 'universal',
-  // Global page headers (https://go.nuxtjs.dev/config-head)
+  /*
+  ** Headers of the page
+  */
   head: {
     title: process.env.npm_package_name || '',
     meta: [
@@ -23,59 +25,59 @@ export default {
   loading: { color: '#87CEFA' },
   // #6495ED
   // #00BFFF
-  // Global CSS (https://go.nuxtjs.dev/config-css)
+  /*
+  ** Global CSS
+  */
   css: [
   ],
-  // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
+  /*
+  ** Plugins to load before mounting the App
+  */
   plugins: [
     // { src: '~/plugins/socket.client.js' }
   ],
-
-  // Auto import components (https://go.nuxtjs.dev/config-components)
-  components: true,
-
-  // Modules for dev and build (recommended) (https://go.nuxtjs.dev/config-modules)
+  /*
+  ** Nuxt.js dev-modules
+  */
   buildModules: [
-    // https://go.nuxtjs.dev/eslint
     // Doc: https://github.com/nuxt-community/eslint-module
     '@nuxtjs/eslint-module'
   ],
-
-  // Modules (https://go.nuxtjs.dev/config-modules)
+  /*
+  ** Nuxt.js modules
+  */
   modules: [
     // Doc: https://bootstrap-vue.js.org
-    // https://go.nuxtjs.dev/bootstrap
     'bootstrap-vue/nuxt',
     // Doc: https://github.com/js-cookie/js-cookie/tree/latest#readme
-    // 'js-cookie',
+    'js-cookie',
     'cookieparser',
     'nuxt-socket-io',
-    // https://go.nuxtjs.dev/axios
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
-    // https://go.nuxtjs.dev/pwa
     '@nuxtjs/pwa'
   ],
   /*
   ** Axios module configuration
   ** See https://axios.nuxtjs.org/options
   */
-  // Axios module configuration (https://go.nuxtjs.dev/config-axios)
   axios: {
     proxy: true
   },
   proxy: {
-    '/api/': { target: process.env.HOST_SERVER || '', pathRewrite: { '^/api/': '/api/v1/' } }
+    '/api': process.env.HOST_SERVER || 'https://backend-sias.herokuapp.com/'
 
   },
   io: {
     // module options
     sockets: [{
       name: 'main',
-      url: process.env.HOST_SERVER
+      url: process.env.HOST_SERVER || 'https://backend-sias.herokuapp.com/'
     }]
   },
-  // Build Configuration (https://go.nuxtjs.dev/config-build)
+  /*
+  ** Build configuration
+  */
   build: {
     /*
     ** You can extend webpack config here

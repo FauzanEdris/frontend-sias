@@ -2,7 +2,7 @@
   <div>
     <b-navbar toggleable="lg" type="light" variant="light">
       <b-navbar-brand to="/admin">
-        SIAS
+        NavBar
       </b-navbar-brand>
       <b-navbar-toggle target="nav-collapse" />
       <b-collapse id="nav-collapse" is-nav>
@@ -37,7 +37,7 @@
             Search
           </b-button>
         </b-nav-form> -->
-        <b-navbar-nav class="ml-auto" style="color : red">
+        <b-navbar-nav class="ml-auto">
           <b-nav-item @click="logout">
             Logout
           </b-nav-item>

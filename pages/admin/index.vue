@@ -1,7 +1,7 @@
 <template>
   <div>
-    <!-- Home <br>
-    {{ this.$store.state.auth }} -->
+    Home <br>
+    {{ this.$store.state.auth }}
     <b-navbar>
       <b-navbar-nav>
         <b-nav-form>
@@ -20,13 +20,13 @@
       </b-navbar-nav>
       <b-navbar-nav class="ml-auto">
         <b-nav-form>
-          <!-- <b-pagination
+          <b-pagination
             v-model="currentPage"
             :total-rows="userList.length"
             :per-page="perPage"
             aria-controls="tableUser"
             align="right"
-          /> -->
+          />
         </b-nav-form>
       </b-navbar-nav>
     </b-navbar>

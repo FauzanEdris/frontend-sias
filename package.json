@@ -1,49 +1,32 @@
 {
-  "name": "frontend-sias",
+  "name": "client",
   "version": "1.0.0",
+  "description": "Sistem Informasi Asisten Dosen",
+  "author": "FauzanEdris",
   "private": true,
   "scripts": {
     "dev": "nuxt",
     "build": "nuxt build",
     "start": "nuxt start",
     "generate": "nuxt generate",
-    "lint:js": "eslint --ext .js,.vue --ignore-path .gitignore .",
-    "lint": "npm run lint:js"
+    "lint": "eslint --ext .js,.vue --ignore-path .gitignore ."
   },
   "dependencies": {
-    "@nuxtjs/axios": "^5.13.6",
-    "@nuxtjs/pwa": "^3.3.5",
-    "bootstrap": "^5.1.3",
-    "bootstrap-vue": "^2.21.2",
-    "cookie-parser": "^1.4.5",
+    "@nuxtjs/axios": "^5.3.6",
+    "@nuxtjs/pwa": "^3.0.0-0",
+    "bootstrap": "^4.1.3",
+    "bootstrap-vue": "^2.0.0",
+    "cookie-parser": "^1.4.4",
     "cookieparser": "^0.1.0",
-    "core-js": "^3.19.1",
-    "js-cookie": "^3.0.1",
-    "nuxt": "^2.15.8",
-    "nuxt-socket-io": "^1.1.24",
-    "vue": "^2.6.14"
+    "js-cookie": "^2.2.1",
+    "nuxt": "^2.14.1",
+    "nuxt-socket-io": "^1.1.4"
   },
   "devDependencies": {
-    "@nuxtjs/eslint-config": "^7.0.0",
-    "@nuxtjs/eslint-module": "^3.0.2",
-    "babel-eslint": "^10.1.0",
-    "eslint": "^8.2.0",
-    "eslint-plugin-nuxt": "^3.0.0"
-  },
-  "description": "Frontend for Sistem Informasi Asisten Dosen",
-  "main": ".eslintrc.js",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/FauzanEdris/frontend-sias.git"
-  },
-  "keywords": [
-    "Frontend",
-    "SIAS"
-  ],
-  "author": "Fauzan Edris <fauzanedris@yahoo.com>",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/FauzanEdris/frontend-sias/issues"
-  },
-  "homepage": "https://github.com/FauzanEdris/frontend-sias#readme"
+    "@nuxtjs/eslint-config": "^3.1.0",
+    "@nuxtjs/eslint-module": "^2.0.0",
+    "babel-eslint": "^10.0.1",
+    "eslint": "^7.7.0",
+    "eslint-plugin-nuxt": ">=0.4.2"
+  }
 }

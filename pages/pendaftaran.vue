@@ -17,11 +17,11 @@
       </b-card-body>
       <b-alert
         ref="alert"
+        @dismissed="alert=false"
         v-model="alert"
         :variant="$store.state.pendaftaran.msg.status === 'success' ? 'success' : 'danger'"
         dismissible
         fade
-        @dismissed="alert=false"
       >
         {{ $store.state.pendaftaran.msg.msg }}
       </b-alert>
@@ -32,9 +32,6 @@
 <script>
 export default {
   middleware: 'pendaftaran',
-  async fetch ({ store, params }) {
-    await store.dispatch('pendaftaran/GET_DOSEN')
-  },
   data () {
     return {
       form: {
@@ -45,6 +42,9 @@ export default {
       alert: false,
       variant_alert: 'danger'
     }
+  },
+  async fetch ({ store, params }) {
+    await store.dispatch('pendaftaran/GET_DOSEN')
   },
   methods: {
     async setForm () {

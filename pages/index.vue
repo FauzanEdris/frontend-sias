@@ -1,27 +1,27 @@
 <template>
   <div class="container">
     <b-form id="formLogin" ref="form" @submit.prevent="login">
-      <b-form-group invalid-feedback="Harap Isi Username" label-for="form-id_user">
+      <b-form-group invalid-feedback="Harap Isi Username" label="Username :" label-for="form-id_user">
         <b-form-input
           ref="id_user"
           v-model="form.username"
           type="text"
-          placeholder="Masukkan Username"
+          placeholder="Username"
           required
         />
       </b-form-group>
-      <b-form-group invalid-feedback="harap Isi Passowrd" label-for="form-password">
+      <b-form-group invalid-feedback="harap Isi Passowrd" label="Password :" label-for="form-password">
         <b-form-input
           ref="password"
           v-model="form.password"
           type="password"
-          placeholder="Masukkan Password"
+          placeholder="Password"
           required
         />
       </b-form-group>
       <b-form-group>
         <b-button type="submit">
-          Login
+          AYAM
         </b-button>
       </b-form-group>
     </b-form>
