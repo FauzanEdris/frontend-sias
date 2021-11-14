@@ -2,7 +2,7 @@
   <div>
     Jadwal <br>
     {{ a }} <br>
-    {{ b }} <br>
+    <!-- {{ b }} <br> -->
     <input v-model="a" type="text">
     <button @click="method1()">
       Ayam
