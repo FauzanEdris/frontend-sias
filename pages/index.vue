@@ -1,7 +1,8 @@
 <template>
-  <div class="container">
+  <b-container class="bv-example-row">
     <b-form id="formLogin" ref="form" @submit.prevent="login">
-      <b-form-group invalid-feedback="Harap Isi Username" label="Username :" label-for="form-id_user">
+      <b-img src="@/static/logo without text.png" width="auto" height="200%" />
+      <b-form-group invalid-feedback="Harap Isi Username" label-for="form-id_user">
         <b-form-input
           ref="id_user"
           v-model="form.username"
@@ -10,7 +11,7 @@
           required
         />
       </b-form-group>
-      <b-form-group invalid-feedback="harap Isi Passowrd" label="Password :" label-for="form-password">
+      <b-form-group invalid-feedback="harap Isi Passowrd" label-for="form-password">
         <b-form-input
           ref="password"
           v-model="form.password"
@@ -21,11 +22,12 @@
       </b-form-group>
       <b-form-group>
         <b-button type="submit">
-          AYAM
+          Login
         </b-button>
       </b-form-group>
     </b-form>
-  </div>
+    </b-row>
+  </b-container>
 </template>
 
 <script>
