@@ -21,12 +21,11 @@
         />
       </b-form-group>
       <b-form-group>
-        <b-button type="submit">
-          Login
+        <b-button variant="outline-primary" class="mb-2" type="submit">
+          <b-icon icon="power" aria hidden="true" />Login
         </b-button>
       </b-form-group>
     </b-form>
-    </b-row>
   </b-container>
 </template>
 
