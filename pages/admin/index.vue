@@ -1,7 +1,5 @@
 <template>
   <div>
-    Home <br>
-    {{ this.$store.state.auth }}
     <b-navbar>
       <b-navbar-nav>
         <b-nav-form>
