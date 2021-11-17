@@ -78,6 +78,9 @@ export default {
   /*
   ** Build configuration
   */
+  bootstrapVue: {
+    icons: true
+  },
   build: {
     /*
     ** You can extend webpack config here

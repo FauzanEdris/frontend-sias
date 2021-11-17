@@ -3,7 +3,10 @@
     <b-form id="formLogin" ref="form" @submit.prevent="login">
       <b-img src="@/static/logo without text.png" width="auto" height="200%" />
       <p class="my-4">
-        <b-form-group invalid-feedback="Harap Isi Username" label-for="form-id_user">
+        <b-input-group class="mb-2" invalid-feedback="Harap Isi Username" label-for="form-id_user">
+          <b-input-group-prepend is-text>
+            <b-icon icon="person-fill" />
+          </b-input-group-prepend>
           <b-form-input
             ref="id_user"
             v-model="form.username"
@@ -11,8 +14,12 @@
             placeholder="Username"
             required
           />
-        </b-form-group>
-        <b-form-group invalid-feedback="harap Isi Passowrd" label-for="form-password">
+          </b-form-group>
+        </b-input-group>
+        <b-input-group class="mb-2" invalid-feedback="harap Isi Passowrd" label-for="form-password">
+          <b-input-group-prepend is-text>
+            <b-icon icon="lock-fill" />
+          </b-input-group-prepend>
           <b-form-input
             ref="password"
             v-model="form.password"
@@ -20,12 +27,14 @@
             placeholder="Password"
             required
           />
-        </b-form-group>
-        <b-form-group>
-          <b-button variant="outline-primary" class="mb-2" type="submit">
-            <b-icon icon="power" aria hidden="true" />Login
-          </b-button>
-        </b-form-group>
+        </b-input-group>
+      </p><p class="my-4" />
+      <b-form-group>
+        <b-button variant="primary" class="mb-2" type="submit">
+          <b-icon icon="power" aria-hidden="true" /> Login
+        </b-button>
+      </b-form-group>
+      </b-input-group>
       </p>
     </b-form>
   </b-container>
