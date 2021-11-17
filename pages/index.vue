@@ -1,7 +1,7 @@
 <template>
   <b-container class="bv-example-row">
     <b-form id="formLogin" ref="form" @submit.prevent="login">
-      <b-img src="@/static/logo without text.png" width="auto" height="200%" />
+      <b-img src="@/static/logo.png" width="auto" height="250%" />
       <p class="my-4">
         <b-input-group class="mb-2" invalid-feedback="Harap Isi Username" label-for="form-id_user">
           <b-input-group-prepend is-text>
