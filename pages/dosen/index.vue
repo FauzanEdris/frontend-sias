@@ -1,6 +1,6 @@
 <template>
   <div>
-    Home <br>
+    <!-- Home <br> -->
     <div v-if="listCalon === null">
       <p>Tidak ada Pendaftar</p>
     </div>
