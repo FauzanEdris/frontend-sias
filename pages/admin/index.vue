@@ -48,7 +48,7 @@
         </div>
       </template>
       <template v-slot:cell(aksi)="data">
-        {{ data.item.id }}
+        <!-- {{ data.item.id }} -->
         <b-button v-b-modal.modalEdit variant="outline-warning" size="sm" title="Edit User" @click="formEdit(data.item)">
           Edit
         </b-button>

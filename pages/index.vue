@@ -2,29 +2,31 @@
   <b-container class="bv-example-row">
     <b-form id="formLogin" ref="form" @submit.prevent="login">
       <b-img src="@/static/logo without text.png" width="auto" height="200%" />
-      <b-form-group invalid-feedback="Harap Isi Username" label-for="form-id_user">
-        <b-form-input
-          ref="id_user"
-          v-model="form.username"
-          type="text"
-          placeholder="Username"
-          required
-        />
-      </b-form-group>
-      <b-form-group invalid-feedback="harap Isi Passowrd" label-for="form-password">
-        <b-form-input
-          ref="password"
-          v-model="form.password"
-          type="password"
-          placeholder="Password"
-          required
-        />
-      </b-form-group>
-      <b-form-group>
-        <b-button variant="outline-primary" class="mb-2" type="submit">
-          <b-icon icon="power" aria hidden="true" />Login
-        </b-button>
-      </b-form-group>
+      <p class="my-4">
+        <b-form-group invalid-feedback="Harap Isi Username" label-for="form-id_user">
+          <b-form-input
+            ref="id_user"
+            v-model="form.username"
+            type="text"
+            placeholder="Username"
+            required
+          />
+        </b-form-group>
+        <b-form-group invalid-feedback="harap Isi Passowrd" label-for="form-password">
+          <b-form-input
+            ref="password"
+            v-model="form.password"
+            type="password"
+            placeholder="Password"
+            required
+          />
+        </b-form-group>
+        <b-form-group>
+          <b-button variant="outline-primary" class="mb-2" type="submit">
+            <b-icon icon="power" aria hidden="true" />Login
+          </b-button>
+        </b-form-group>
+      </p>
     </b-form>
   </b-container>
 </template>

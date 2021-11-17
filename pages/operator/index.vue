@@ -50,10 +50,10 @@
       </template>
       <template v-slot:cell(aksi)="data">
         {{ data.item.id }}
-        <b-button @click="data.toggleDetails" variant="outline-warning" size="sm" title="Edit User">
+        <b-button variant="outline-warning" size="sm" title="Edit User" @click="data.toggleDetails">
           Edit
         </b-button>
-        <b-button @click="hapus(data.item.id)" variant="outline-danger" size="sm" title="Delete User">
+        <b-button variant="outline-danger" size="sm" title="Delete User" @click="hapus(data.item.id)">
           Delete
         </b-button>
       </template>
@@ -64,7 +64,7 @@
               <b>Status Semester:</b>
             </b-col>
             <b-col>
-              <b-form-checkbox v-model="data.item.status" @change="statusSemester({ id: data.item.id, status: data.item.status })" name="check-button" switch>
+              <b-form-checkbox v-model="data.item.status" name="check-button" switch @change="statusSemester({ id: data.item.id, status: data.item.status })">
                 <div v-if="data.item.status === true">
                   <span class="text-success">&bull; Active</span>
                 </div>
@@ -80,7 +80,7 @@
               <b>Status Jadwal:</b>
             </b-col>
             <b-col>
-              <b-form-checkbox v-model="data.item.status_jadwal_asdos" @change="statusJadwalAsdos({ id: data.item.id, status: data.item.status_jadwal_asdos })" :disabled="data.item.status === true ? false : true" name="check-button" switch>
+              <b-form-checkbox v-model="data.item.status_jadwal_asdos" :disabled="data.item.status === true ? false : true" name="check-button" switch @change="statusJadwalAsdos({ id: data.item.id, status: data.item.status_jadwal_asdos })">
                 <div v-if="data.item.status_jadwal_asdos === true">
                   Asdos <span class="text-success">&bull; Active</span>
                 </div>
@@ -91,7 +91,7 @@
             </b-col>
 
             <b-col>
-              <b-form-checkbox v-model="data.item.status_jadwal_dosen" @change="statusJadwalDosen({ id: data.item.id, status: data.item.status_jadwal_dosen })" :disabled="data.item.status === true ? false : true" name="check-button" switch>
+              <b-form-checkbox v-model="data.item.status_jadwal_dosen" :disabled="data.item.status === true ? false : true" name="check-button" switch @change="statusJadwalDosen({ id: data.item.id, status: data.item.status_jadwal_dosen })">
                 <div v-if="data.item.status_jadwal_dosen === true">
                   Dosen <span class="text-success">&bull; Active</span>
                 </div>
@@ -110,19 +110,19 @@
               <b-form-file
                 id="file"
                 ref="file"
-                @change="uploadJadwal"
                 :disabled="data.item.status === true ? false : true"
                 class="mt-3"
                 accept=".csv"
                 plain
+                @change="uploadJadwal"
               /> <br>
               <b-alert
                 ref="alert"
                 :show="alertTime"
-                @dismissed="alertTime=0"
                 variant="success"
                 dismissible
                 fade
+                @dismissed="alertTime=0"
               >
                 {{ msg }}
               </b-alert>
@@ -134,7 +134,7 @@
               <b>Status Pendaftaran:</b>
             </b-col>
             <b-col>
-              <b-form-checkbox v-model="data.item.status_pendaftaran" @change="statusPendaftaran({ id: data.item.id, status: data.item.status_pendaftaran })" :disabled="data.item.status === true ? false : true" name="check-button" switch>
+              <b-form-checkbox v-model="data.item.status_pendaftaran" :disabled="data.item.status === true ? false : true" name="check-button" switch @change="statusPendaftaran({ id: data.item.id, status: data.item.status_pendaftaran })">
                 <div v-if="data.item.status_pendaftaran === true">
                   <span class="text-success">&bull; Active</span>
                 </div>
@@ -145,7 +145,7 @@
             </b-col>
           </b-row>
 
-          <b-button @click="data.toggleDetails" size="sm">
+          <b-button size="sm" @click="data.toggleDetails">
             Hide Details
           </b-button>
         </b-card>
@@ -182,6 +182,9 @@ export default {
   components: {
     formTambah
   },
+  async fetch ({ store, params }) {
+    await store.dispatch('operator/GET_SEMESTER')
+  },
   data () {
     return {
       showDetails: true,
@@ -217,9 +220,6 @@ export default {
       msg: this.$store.state.operator.msg.msg
       // checked: this.$store.state.operator.listSemester.status
     }
-  },
-  async fetch ({ store, params }) {
-    await store.dispatch('operator/GET_SEMESTER')
   },
   methods: {
     async setData () {

@@ -8,8 +8,8 @@
             <b-form-input
               id="form-id_user"
               ref="id_user"
-              :state="check.id_user"
               v-model="form.id_user"
+              :state="check.id_user"
               type="text"
               required
               readonly
@@ -19,8 +19,8 @@
           <b-form-group :state="check.nama" invalid-feedback="Harap Isi Nama" label="Nama :" label-for="form-nama">
             <b-form-input
               ref="nama"
-              :state="check.nama"
               v-model="form.nama"
+              :state="check.nama"
               type="text"
               placeholder="Nama"
               required
@@ -30,8 +30,8 @@
             <b-form-select
               id="form-role"
               ref="role"
-              :state="check.role"
               v-model="form.role"
+              :state="check.role"
               :options="role"
               name="role"
               required
@@ -41,8 +41,8 @@
             <b-form-select
               id="form-status"
               ref="status"
-              :state="check.status"
               v-model="form.status"
+              :state="check.status"
               :options="status"
               name="status"
               required
@@ -52,8 +52,8 @@
             <b-form-input
               id="form-email"
               ref="email"
-              :state="check.email"
               v-model="form.email"
+              :state="check.email"
               name="email"
               type="email"
               required
@@ -65,19 +65,19 @@
       <template v-slot:modal-footer>
         <div class="w-100">
           <b-button
-            @click="update"
             form="formEdit"
             variant="primary"
             size="sm"
             class="float-right"
+            @click="update"
           >
             Update
           </b-button>
           <b-button
-            @click="$bvModal.hide('modalEdit')"
             variant="sencond"
             size="sm"
             class="float-right"
+            @click="$bvModal.hide('modalEdit')"
           >
             Cancel
           </b-button>
