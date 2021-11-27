@@ -29,6 +29,7 @@ export default {
   ** Global CSS
   */
   css: [
+  '@/static/assets/css/main.css'
   ],
   /*
   ** Plugins to load before mounting the App
@@ -61,6 +62,7 @@ export default {
   ** Axios module configuration
   ** See https://axios.nuxtjs.org/options
   */
+  components: true,
   axios: {
     proxy: true
   },
