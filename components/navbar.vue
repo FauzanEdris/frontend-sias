@@ -2,7 +2,7 @@
   <div>
     <b-navbar toggleable="lg" class="navbar2">
       <b-navbar-brand to="/admin">
-        <b-img src="@/static/logo without text.png" width="50%" height="auto" to="/admin" />
+       <b-img thumbnail rounded="circle" src="@/static/logo_stikom.png" width="50%" height="auto" to="/admin" />
       </b-navbar-brand>
       <b-navbar-toggle target="nav-collapse" />
       <b-collapse id="nav-collapse" is-nav>
@@ -46,7 +46,7 @@
     </b-navbar>
     <b-navbar toggleable="lg" type="light" class="navbar2">
       <b-navbar-brand to="/operator">
-        <b-img src="@/static/logo without text.png" width="50%" height="auto" to="/operator" />
+        <b-img src="@/static/logo_stikom.png" width="50%" height="auto" to="/operator" />
       </b-navbar-brand>
       <b-navbar-toggle target="nav-collapse" />
       <b-collapse id="nav-collapse" is-nav>

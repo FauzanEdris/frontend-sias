@@ -259,7 +259,7 @@
         <b-button
           size="sm"
           class="float-right"
-          @click="$bvModal.hide('modalEdit')"
+          @click="$bvModal.hide('modalTambah')"
         >
           Cancel
         </b-button>
