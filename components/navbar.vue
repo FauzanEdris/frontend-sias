@@ -1,14 +1,13 @@
 <template>
   <div>
     <b-navbar toggleable="lg" class="navbar2">
-      <b-navbar-brand to="/admin">
+      <b-navbar-brand :to="(checkRole())[0].link">
         <b-img
           thumbnail
           rounded="circle"
           src="@/static/logo_stikom.png"
           width="50%"
           height="auto"
-          to="/admin"
         />
       </b-navbar-brand>
       <b-navbar-toggle target="nav-collapse" />
