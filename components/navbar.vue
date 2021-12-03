@@ -71,8 +71,8 @@
           :state="passwordState"
         >
           <b-form-input
-            id="name-input"
-            v-model="password"
+            id="old_password"
+            v-model="old_password"
             type="password"
             :state="passwordState"
             required
@@ -81,15 +81,29 @@
             label="Enter your New Password"
             label-for="password-input"
             invalid-feedback="Password is required"
-            :state="nameState"
+            :state="passwordState1"
           >
             <b-form-input
-              id="password-input"
-              v-model="password"
+              id="new_password1"
+              v-model="new_password1"
               type="password"
-              :state="passwordState"
+              :state="passwordState1"
               required
             />
+            <b-form-group
+              label="Re-type your New Password"
+              label-for="password-input"
+              invalid-feedback="Password is required"
+              :state="passwordState2"
+            >
+              <b-form-input
+                id="new_password2"
+                v-model="new_password2"
+                type="password"
+                :state="passwordState2"
+                required
+              />
+            </b-form-group>
           </b-form-group>
         </b-form-group>
       </form>
@@ -124,6 +138,19 @@ export default {
           { name: 'Profil', link: '/operator/profil' },
           { name: 'Pendaftaran', link: '/operator/pendaftaran' },
           { name: 'Jadwal', link: '/operator/jadwal' }
+        ],
+        asdos: [
+          { name: 'Home', link: '/asdos' },
+          { name: 'Profil', link: '/asdos/profil' },
+          { name: 'Jadwal', link: '/asdos/jadwal' },
+          { name: 'Laporan Kegiatan', link: '/asdos/laporan' },
+          { name: 'Poling Jadwal', link: '/asdos/polling' }
+        ],
+        dosen: [
+          { name: 'Home', link: '/dosen' },
+          { name: 'Profil', link: '/dosen/profil' },
+          { name: 'Rekomendasi', link: '/dosen/rekomendasi' },
+          { name: 'Jadwal', link: '/dosen/jadwal' }
         ]
       }
     }
