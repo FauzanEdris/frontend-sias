@@ -1,6 +1,9 @@
 <template>
   <div>
-    <b-navbar toggleable="lg" class="navbar2">
+    <b-navbar
+      toggleable="lg"
+      class="navbar2"
+    >
       <b-navbar-brand :to="(checkRole())[0].link">
         <b-img
           thumbnail
@@ -11,21 +14,28 @@
         />
       </b-navbar-brand>
       <b-navbar-toggle target="nav-collapse" />
-      <b-collapse id="nav-collapse" is-nav>
+      <b-collapse
+        id="nav-collapse"
+        is-nav
+      >
         <b-navbar-nav>
           <template v-for="menu in checkRole()">
-            <b-nav-item v-if="menu.link" :key="menu" :to="menu.link">
+            <b-nav-item
+              v-if="menu.link"
+              :key="menu.link"
+              :to="menu.link"
+            >
               {{ menu.name }}
             </b-nav-item>
             <b-nav-item-dropdown
               v-if="menu.submenu"
-              :key="menu"
-              text="User"
+              :key="menu.name"
+              :text="menu.name"
               right
             >
               <b-dropdown-item
                 v-for="submenu in menu.submenu"
-                :key="submenu"
+                :key="submenu.link"
                 :to="submenu.link"
               >
                 {{ submenu.name }}
@@ -40,7 +50,10 @@
           </b-button>
         </b-nav-form> -->
         <b-navbar-nav class="ml-auto">
-          <b-nav-item-dropdown text="Profil" right>
+          <b-nav-item-dropdown
+            text="Profil"
+            right
+          >
             <b-dropdown-item href="#">
               Account
             </b-dropdown-item>
@@ -49,7 +62,6 @@
             </b-dropdown-item>
             <b-dropdown-item @click="logout">
               Logout
-            </b-dropdown-item>
             </b-dropdown-item>
           </b-nav-item-dropdown>
         </b-navbar-nav>
@@ -63,48 +75,47 @@
       @hidden="resetModal"
       @ok="handleOk"
     >
-      <form ref="form" @submit.stop.prevent="handleSubmit">
+      <form
+        ref="form"
+        @submit.stop.prevent="handleSubmit"
+      >
         <b-form-group
           label="Enter your Old Password"
-          label-for="password-input"
+          label-for="old_password"
           invalid-feedback="Password is required"
-          :state="passwordState"
         >
           <b-form-input
             id="old_password"
-            v-model="old_password"
+            v-model="change_password.old_password"
             type="password"
-            :state="passwordState"
             required
           />
-          <b-form-group
-            label="Enter your New Password"
-            label-for="password-input"
-            invalid-feedback="Password is required"
-            :state="passwordState1"
-          >
-            <b-form-input
-              id="new_password1"
-              v-model="new_password1"
-              type="password"
-              :state="passwordState1"
-              required
-            />
-            <b-form-group
-              label="Re-type your New Password"
-              label-for="password-input"
-              invalid-feedback="Password is required"
-              :state="passwordState2"
-            >
-              <b-form-input
-                id="new_password2"
-                v-model="new_password2"
-                type="password"
-                :state="passwordState2"
-                required
-              />
-            </b-form-group>
-          </b-form-group>
+        </b-form-group>
+        <b-form-group
+          label="Enter your New Password"
+          label-for="password_input"
+          invalid-feedback="Password is required"
+        >
+          <b-form-input
+            id="password_input"
+            v-model="change_password.new_password"
+            type="password"
+            required
+          />
+        </b-form-group>
+        <b-form-group
+          label="Re-type your New Password"
+          label-for="password_reinput"
+          invalid-feedback="Password is required"
+          :state="state"
+        >
+          <b-form-input
+            id="password_reinput"
+            v-model="change_password.reinput_password"
+            :state="state"
+            type="password"
+            required
+          />
         </b-form-group>
       </form>
     </b-modal>
@@ -152,7 +163,17 @@ export default {
           { name: 'Rekomendasi', link: '/dosen/rekomendasi' },
           { name: 'Jadwal', link: '/dosen/jadwal' }
         ]
+      },
+      change_password: {
+        old_password: '',
+        new_password: '',
+        reinput_password: ''
       }
+    }
+  },
+  computed: {
+    state () {
+      return this.change_password.reinput_password.length >= 8
     }
   },
   methods: {
@@ -164,8 +185,13 @@ export default {
       this.$router.push('/')
     },
     checkRole () {
+      if (this.$store.state.auth === null) {
+        return this.logout()
+      }
+
       const userRole = this.$store.state.auth.user.role
       let dataMenu = []
+
       switch (userRole) {
         case 'Admin':
           dataMenu = this.menus.admin
@@ -188,6 +214,12 @@ export default {
       }
 
       return dataMenu
+    },
+    resetModal () {
+      // do something
+    },
+    handleOk () {
+      // handle ok, do something
     }
   }
 }
