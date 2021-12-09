@@ -50,6 +50,11 @@
           </b-button>
         </b-nav-form> -->
         <b-navbar-nav class="ml-auto">
+          <b-nav-item @click="logout">
+              Logout
+          </b-nav-item>
+        </b-navbar-nav>
+        <!-- <b-navbar-nav class="ml-auto">
           <b-nav-item-dropdown
             text="Profil"
             right
@@ -64,7 +69,7 @@
               Logout
             </b-dropdown-item>
           </b-nav-item-dropdown>
-        </b-navbar-nav>
+        </b-navbar-nav> -->
       </b-collapse>
     </b-navbar>
     <b-modal
@@ -142,7 +147,8 @@ export default {
               { name: 'bag. Akademik', link: '/admin/akademik' },
               { name: 'bag. Keuangan', link: '/admin/keuangan' }
             ]
-          }
+          },
+          { name: 'Profil', link: '/admin/profil' }
         ],
         operator: [
           { name: 'Home', link: '/operator' },
