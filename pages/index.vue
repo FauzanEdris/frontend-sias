@@ -90,6 +90,7 @@ export default {
         // }
       } else {
         this.msg = res.msg
+        alert('incorrect username or password')
       }
     }
     // redirect ({ res, role }) {

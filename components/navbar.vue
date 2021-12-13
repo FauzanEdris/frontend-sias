@@ -51,7 +51,7 @@
         </b-nav-form> -->
         <b-navbar-nav class="ml-auto">
           <b-nav-item @click="logout">
-              Logout
+            Logout
           </b-nav-item>
         </b-navbar-nav>
         <!-- <b-navbar-nav class="ml-auto">
