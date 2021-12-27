@@ -73,7 +73,7 @@
       </b-collapse>
     </b-navbar>
     <b-modal
-      id="modal-prevent-closing"
+      id="modalPassword"
       ref="modal"
       title="Change Password"
       @show="resetModal"
@@ -98,11 +98,11 @@
         </b-form-group>
         <b-form-group
           label="Enter your New Password"
-          label-for="password_input"
+          label-for="new_password"
           invalid-feedback="Password is required"
         >
           <b-form-input
-            id="password_input"
+            id="new_password"
             v-model="change_password.new_password"
             type="password"
             required
@@ -110,13 +110,13 @@
         </b-form-group>
         <b-form-group
           label="Re-type your New Password"
-          label-for="password_reinput"
+          label-for="confirm_password"
           invalid-feedback="Password is required"
           :state="state"
         >
           <b-form-input
-            id="password_reinput"
-            v-model="change_password.reinput_password"
+            id="confirm_password"
+            v-model="change_password.confirm_password"
             :state="state"
             type="password"
             required
@@ -173,13 +173,13 @@ export default {
       change_password: {
         old_password: '',
         new_password: '',
-        reinput_password: ''
+        confirm_password: ''
       }
     }
   },
   computed: {
     state () {
-      return this.change_password.reinput_password.length >= 8
+      return this.change_password.confirm_password.length >= 8
     }
   },
   methods: {
@@ -224,8 +224,19 @@ export default {
     resetModal () {
       // do something
     },
-    handleOk () {
+    async handleOk () {
       // handle ok, do something
+      await this.$store.dispatch('profile/UPDATE_PASSWORD', this.change_password)
+      console.log(this.$store.state.profile.msg.status)
+      if (this.$store.state.profile.msg.status === 'error') {
+        // this.msg()
+        return
+      }
+      // this.setData()
+      this.$nextTick(() => {
+        this.$bvModal.hide('modalPassword')
+      })
+      // this.alert = false
     }
   }
 }
