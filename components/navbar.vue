@@ -148,24 +148,24 @@ export default {
               { name: 'bag. Keuangan', link: '/admin/keuangan' }
             ]
           },
-          { name: 'Profil', link: '/admin/profil' }
+          { name: 'Profil', link: '/admin/profile' }
         ],
         operator: [
           { name: 'Home', link: '/operator' },
-          { name: 'Profil', link: '/operator/profil' },
+          { name: 'Profil', link: '/operator/profile' },
           { name: 'Pendaftaran', link: '/operator/pendaftaran' },
           { name: 'Jadwal', link: '/operator/jadwal' }
         ],
         asdos: [
           { name: 'Home', link: '/asdos' },
-          { name: 'Profil', link: '/asdos/profil' },
+          { name: 'Profil', link: '/asdos/profile' },
           { name: 'Jadwal', link: '/asdos/jadwal' },
           { name: 'Laporan Kegiatan', link: '/asdos/laporan' },
           { name: 'Poling Jadwal', link: '/asdos/polling' }
         ],
         dosen: [
           { name: 'Home', link: '/dosen' },
-          { name: 'Profil', link: '/dosen/profil' },
+          { name: 'Profil', link: '/dosen/profile' },
           { name: 'Rekomendasi', link: '/dosen/rekomendasi' },
           { name: 'Jadwal', link: '/dosen/jadwal' }
         ]

@@ -1,12 +1,8 @@
 <template>
-  <div>
-    Profil
-  </div>
+  <profile />
 </template>
 
 <script>
-export default {
-}
 </script>
 
 <style lang="css" scoped>
