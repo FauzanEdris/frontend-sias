@@ -163,6 +163,13 @@ export default {
           { name: 'Laporan Kegiatan', link: '/asdos/laporan' },
           { name: 'Poling Jadwal', link: '/asdos/polling' }
         ],
+        akademik: [
+          { name: 'Home', link: '/akademik' },
+          { name: 'Profil', link: '/akademik/profile' },
+          { name: 'Jadwal', link: '/akademik/jadwal' },
+          { name: 'Laporan Kegiatan', link: '/akademik/laporan' },
+          { name: 'Poling Jadwal', link: '/akademik/polling' }
+        ],
         dosen: [
           { name: 'Home', link: '/dosen' },
           { name: 'Profil', link: '/dosen/profile' },

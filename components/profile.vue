@@ -257,7 +257,7 @@ export default {
       isEditing: false,
       user: {
         name: 'fauzan',
-        email: 'dios.comsa',
+        email: 'admin@gmail.com',
         phone: '0361241124',
         mobile: '08123123124',
         address: 'jalan raya i gusti ngurah rai no 1'
