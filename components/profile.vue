@@ -16,13 +16,10 @@
                   <p class="text-muted font-size-sm">
                     Bay Area, San Francisco, CA
                   </p>
-                  <button v-b-modal.modalPassword class="btn btn-primary">
-                    Change Password
-                  </button>
+                  <changepassword />
                   <!-- <button class="btn btn-outline-primary">
                     Message
                   </button> -->
-                  </a>
                 </div>
               </div>
             </div>
@@ -251,7 +248,9 @@
 </template>
 
 <script>
+// import password from './changepassword.vue'
 export default {
+  // components: { changepassword },
   data () {
     return {
       isEditing: false,
