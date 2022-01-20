@@ -8,10 +8,8 @@
 </template>
 
 <script>
-const Cookie = process.client ? require('js-cookie') : undefined
-
 export default {
-  middleware: 'operatorAuth',
+  middleware: 'operatorAuth'
 }
 </script>
 
