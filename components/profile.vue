@@ -10,11 +10,8 @@
                 <div class="mt-3">
                   <script />
                   <h3>John</h3>
-                  <p class="text-secondary mb-1">
-                    Full Stack Developer
-                  </p>
-                  <p class="text-muted font-size-sm">
-                    Bay Area, San Francisco, CA
+                  <p class="text-secondary">
+                    {{ this.$store.state.auth.user.id }}
                   </p>
                   <changepassword />
                   <!-- <button class="btn btn-outline-primary">
@@ -255,11 +252,10 @@ export default {
     return {
       isEditing: false,
       user: {
-        name: 'fauzan',
-        email: 'admin@gmail.com',
-        phone: '0361241124',
-        mobile: '08123123124',
-        address: 'jalan raya i gusti ngurah rai no 1'
+        name: this.$store.state.auth.user.nama,
+        email: this.$store.state.auth.user.email,
+        phone: this.$store.state.auth.user.telp,
+        address: this.$store.state.auth.user.alamat
 
       }
     }
@@ -269,7 +265,6 @@ export default {
       this.user.name = this.$refs.name.value
       this.user.email = this.$refs.email.value
       this.user.phone = this.$refs.phone.value
-      this.user.mobile = this.$refs.mobile.value
       this.user.address = this.$refs.address.value
       this.isEditing = !this.isEditing
     }
