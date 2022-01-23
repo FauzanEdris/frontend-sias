@@ -84,7 +84,7 @@ export default {
     return {
       menus: {
         admin: [
-          { name: 'Home', link: '/admin' },
+          { name: 'Beranda', link: '/admin' },
           {
             name: 'User',
             submenu: [
@@ -99,30 +99,33 @@ export default {
           { name: 'Profil', link: '/admin/profile' }
         ],
         operator: [
-          { name: 'Home', link: '/operator' },
+          { name: 'Beranda', link: '/operator' },
           { name: 'Profil', link: '/operator/profile' },
           { name: 'Pendaftaran', link: '/operator/pendaftaran' },
           { name: 'Jadwal', link: '/operator/jadwal' }
         ],
         asdos: [
-          { name: 'Home', link: '/asdos' },
+          { name: 'Beranda', link: '/asdos' },
           { name: 'Profil', link: '/asdos/profile' },
           { name: 'Jadwal', link: '/asdos/jadwal' },
           { name: 'Laporan Kegiatan', link: '/asdos/laporan' },
           { name: 'Poling Jadwal', link: '/asdos/polling' }
         ],
         akademik: [
-          { name: 'Home', link: '/akademik' },
+          { name: 'Beranda', link: '/akademik' },
           { name: 'Profil', link: '/akademik/profile' },
-          { name: 'Jadwal', link: '/akademik/jadwal' },
-          { name: 'Laporan Kegiatan', link: '/akademik/laporan' },
-          { name: 'Poling Jadwal', link: '/akademik/polling' }
+          { name: 'Laporan Kegiatan', link: '/akademik/laporan' }
         ],
         dosen: [
-          { name: 'Home', link: '/dosen' },
+          { name: 'Beranda', link: '/dosen' },
           { name: 'Profil', link: '/dosen/profile' },
           { name: 'Rekomendasi', link: '/dosen/rekomendasi' },
           { name: 'Jadwal', link: '/dosen/jadwal' }
+        ],
+        keuangan: [
+          { name: 'Beranda', link: '/keuangan' },
+          { name: 'Profil', link: '/keuangan/profile' },
+          { name: 'Laporan Kegiatan', link: '/keuangan/laporan' }
         ]
       }
     }
