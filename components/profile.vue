@@ -9,7 +9,7 @@
                 <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Admin" class="rounded-circle" width="150">
                 <div class="mt-3">
                   <script />
-                  <h3>John</h3>
+                  <h3>{{ this.$store.state.auth.user.nama }}</h3>
                   <p class="text-secondary">
                     {{ this.$store.state.auth.user.id }}
                   </p>
@@ -160,7 +160,7 @@
               <div class="row">
                 <div class="col-sm-3">
                   <h6 class="mb-0">
-                    Phone
+                    No Telp/HP
                   </h6>
                 </div>
                 <div class="col-sm-9 text-secondary">
@@ -178,36 +178,17 @@
               <div class="row">
                 <div class="col-sm-3">
                   <h6 class="mb-0">
-                    Mobile
-                  </h6>
-                </div>
-                <div class="col-sm-9 text-secondary">
-                  <input
-                    ref="mobile"
-                    type="text"
-                    class="form-control"
-                    :disabled="!isEditing"
-                    :class="{view: !isEditing}"
-                    :value="user.mobile"
-                  >
-                </div>
-              </div>
-              <hr>
-              <div class="row">
-                <div class="col-sm-3">
-                  <h6 class="mb-0">
                     Address
                   </h6>
                 </div>
                 <div class="col-sm-9 text-secondary">
-                  <input
+                  <b-form-textarea
                     ref="address"
-                    type="text"
-                    class="form-control"
+                    rows="3"
+                    max-rows="6"
                     :disabled="!isEditing"
                     :class="{view: !isEditing}"
-                    :value="user.address"
-                  >
+                    :value="user.address" />
                 </div>
               </div>
               <hr>
