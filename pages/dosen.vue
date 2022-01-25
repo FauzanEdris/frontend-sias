@@ -8,6 +8,9 @@
 </template>
 
 <script>
+export default {
+  middleware: 'dosenAuth'
+}
 </script>
 
 <style lang="css" scoped>

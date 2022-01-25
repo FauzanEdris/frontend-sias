@@ -8,6 +8,9 @@
 </template>
 
 <script>
+export default {
+  middleware: 'adminAuth'
+}
 </script>
 
 <style lang="css" scoped>

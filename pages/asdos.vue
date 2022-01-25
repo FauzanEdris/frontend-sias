@@ -8,6 +8,9 @@
 </template>
 
 <script>
+export default {
+  middleware: 'asdosAuth'
+}
 </script>
 
 <style lang="css" scoped>

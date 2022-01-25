@@ -33,6 +33,7 @@ wa<template>
 
 <script>
 export default {
+  middleware: 'keuanganAuth'
 }
 </script>
 

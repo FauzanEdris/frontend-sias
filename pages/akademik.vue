@@ -8,6 +8,9 @@
 </template>
 
 <script>
+export default {
+  middleware: 'akademikAuth'
+}
 </script>
 
 <style lang="css" scoped>
