@@ -211,14 +211,19 @@
           <h4>Tidak Ada Laporan yang Tersedia.</h4>
         </div>
       </template>
-      <template v-slot:cell(aksi)>
+      <template v-slot:cell(aksi)="data">
         <b-button
           variant="outline-primary"
           size="sm"
           title="Detail"
+          @click="data.toggleDetails"
         >
           Detail
         </b-button>
+      </template>
+      <template v-slot:row-details="data">
+        Mungkin datanya siswa yang hadir
+        {{ data.item.materi }}
       </template>
     </b-table>
     <formTambah dispose />
