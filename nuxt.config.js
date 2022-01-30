@@ -36,6 +36,7 @@ export default {
   */
   plugins: [
     // { src: '~/plugins/socket.client.js' }
+    { src: '~/plugins/filters.js' }
   ],
   /*
   ** Nuxt.js dev-modules
