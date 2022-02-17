@@ -4,7 +4,7 @@
       toggleable="lg"
       class="navbar2"
     >
-      <b-navbar-brand :to="(checkRole())[0].link">
+      <b-navbar-brand to="/">
         <b-img
           thumbnail
           rounded="circle"

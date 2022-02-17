@@ -1,4 +1,4 @@
-wa<template>
+<template>
   <div>
     <b-navbar toggleable="lg" type="light" variant="light">
       <b-navbar-brand :to="keuangan">

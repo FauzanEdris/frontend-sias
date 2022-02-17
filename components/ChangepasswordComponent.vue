@@ -77,7 +77,10 @@ export default {
     },
     async handleOk () {
       // handle ok, do something
-      await this.$store.dispatch('profile/UPDATE_PASSWORD', this.change_password)
+      await this.$store.dispatch(
+        'profile/UPDATE_PASSWORD',
+        this.change_password
+      )
       console.log(this.$store.state.profile.msg.status)
       if (this.$store.state.profile.msg.status === 'error') {
         // this.msg()

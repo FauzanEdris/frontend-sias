@@ -206,12 +206,15 @@
       responsive
       show-empty
     >
-      <template v-slot:empty>
+      <template #empty>
         <div class="text-center">
           <h4>Tidak Ada Laporan yang Tersedia.</h4>
         </div>
       </template>
-      <template v-slot:cell(aksi)="data">
+      <template #cell(materi)="data">
+        {{ data.item.materi | excerpt(300, "..") }}
+      </template>
+      <template #cell(aksi)="data">
         <b-button
           variant="outline-primary"
           size="sm"
@@ -221,18 +224,18 @@
           Detail
         </b-button>
       </template>
-      <template v-slot:row-details="data">
+      <template #row-details="data">
         Mungkin datanya siswa yang hadir
         {{ data.item.materi }}
       </template>
     </b-table>
-    <formTambah dispose />
+    <FormTambahComponent dispose />
   </div>
 </template>
 
 <script>
 import { createNamespacedHelpers } from 'vuex'
-import formTambah from '~/components/asdos/formTambahLaporan'
+import FormTambahComponent from '~/components/asdos/formTambahLaporan'
 const { mapState, mapActions, mapMutations } = createNamespacedHelpers('asdos')
 
 export default {
@@ -241,10 +244,7 @@ export default {
   //   return store.state.categories.some(category => category.id === params.id)
   // },
   components: {
-    formTambah
-  },
-  async fetch ({ store, params }) {
-    await store.dispatch('asdos/GET_DETAIL_PERKULIAHAN', params.id)
+    FormTambahComponent
   },
   data () {
     return {
@@ -277,6 +277,9 @@ export default {
       ]
     }
   },
+  async fetch ({ store, params }) {
+    await store.dispatch('asdos/GET_DETAIL_PERKULIAHAN', params.id)
+  },
   computed: {
     ...mapState({
       perkuliahan: state => state.detail
@@ -291,7 +294,7 @@ export default {
       detail: 'SET_DETAIL_ID'
     }),
     cekData (data) {
-      return (data !== '') ? data : '-'
+      return data !== '' ? data : '-'
     }
   }
 }

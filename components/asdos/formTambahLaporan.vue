@@ -8,12 +8,12 @@
             <b-form-select
               id="form-ke"
               v-model="form.ke"
-              :options="this.$store.state.pertemuan"
+              :options="$store.state.pertemuan"
               :state="check.ke"
               placeholder="Pilih Pertemuan"
               required
             >
-              <template v-slot:first>
+              <template #first>
                 <b-form-select-option :value="null" disabled>
                   Pilih Pertemuan
                 </b-form-select-option>
@@ -46,7 +46,7 @@
           </b-form-group>
         </b-form>
       </p>
-      <template v-slot:modal-footer>
+      <template #modal-footer>
         <!-- <div class="w-100"> -->
         <b-button
           form="formTambah"
@@ -79,12 +79,14 @@ export default {
       form: {
         ke: null,
         tgl: null,
-        materi: null
+        materi: null,
+        jml_peserta: null
       },
       check: {
         ke: null,
         tgl: null,
-        materi: null
+        materi: null,
+        jml_peserta: null
       }
     }
   },
