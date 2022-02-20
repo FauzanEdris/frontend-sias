@@ -60,7 +60,7 @@
             <span class="text-danger">&bull; Inactive</span>
           </div>
         </template> -->
-        <template v-slot:cell(aksi)="data">
+        <template #cell(aksi)="data">
           <b-button
             v-if="id_user === data.item._id_asdos"
             variant="outline-success"
@@ -117,9 +117,6 @@
 
 <script>
 export default {
-  async fetch ({ store, context, params }) {
-    await store.dispatch('asdos/GET_JADWAL')
-  },
   data () {
     return {
       a: 'b',
@@ -237,6 +234,9 @@ export default {
       max_sks: 12
     }
   },
+  async fetch ({ store, context, params }) {
+    await store.dispatch('asdos/GET_JADWAL')
+  },
   computed: {
     sks () {
       const data = this.listJadwal
@@ -294,13 +294,12 @@ export default {
     // this.refresh()
     if (this.listJadwal !== null) {
       this.socket = this.$nuxtSocket({
-        channel: '/'
+        // channel: '/'
         // reconnection: true
       })
       /* Listen for events: */
       this.socket.on('dataJadwal', (msg, cb) => {
         /* Handle event */
-        // console.log(msg)
         // this.a = msg
         this.$store.commit('asdos/SET_JADWAL', msg)
         this.id = this.$store.state.asdos.listJadwal.id
