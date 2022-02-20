@@ -30,25 +30,27 @@ export const actions = {
   async ME ({ commit }, req) {
     const { data } = await this.$axios.post('/api/auths/me')
     commit('SET_AUTH', data.data)
+    // use push for history || use replace for not save history
+    /** https://router.vuejs.org/guide/essentials/navigation.html */
     switch (data.data.user.role) {
       case 'Admin':
-        this.$router.push('/admin')
+        this.$router.replace('/admin')
         break
       case 'Operator':
-        return this.$router.push('/operator')
+        return this.$router.replace('/operator')
       case 'Dosen':
-        return this.$router.push('/dosen')
+        return this.$router.replace('/dosen')
       case 'Akademik':
-        this.$router.push('/akademik')
+        this.$router.replace('/akademik')
         break
       case 'Keuangan':
-        this.$router.push('/keuangan')
+        this.$router.replace('/keuangan')
         break
       case 'Asdos':
         this.$router.replace('/asdos')
         break
       default:
-        this.$router.push('/')
+        this.$router.replace('/')
         break
     }
   },
