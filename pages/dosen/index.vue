@@ -40,7 +40,7 @@
         hover
         responsive
       >
-        <template v-slot:cell(status_asdos)="data">
+        <template #cell(status_asdos)="data">
           <div v-if="data.item.status_asdos === true">
             <span class="text-success">&bull; Active</span>
           </div>
@@ -48,7 +48,13 @@
             <span class="text-danger">&bull; Inactive</span>
           </div>
         </template>
-        <template v-slot:cell(aksi)="data">
+        <template #cell(transkip)="data">
+          {{ data.item }}
+          <b-button variant="link" size="sm" title="Transkip" :href="'/api/dosen/calon/transkip=' + data.item.transkip">
+            Transkip
+          </b-button>
+        </template>
+        <template #cell(aksi)="data">
           {{ data.item.status_acc }}
           <div v-if="data.item.status_acc === true">
             <b-badge variant="success">
@@ -90,9 +96,6 @@
 
 <script>
 export default {
-  async fetch ({ store, params }) {
-    await store.dispatch('dosen/GET_CALON')
-  },
   data () {
     return {
       id: this.$store.state.dosen.listCalon.id,
@@ -122,8 +125,8 @@ export default {
           sortable: true
         },
         {
-          key: 'dosen',
-          label: 'Dosen Rekomendasi'
+          key: 'transkip',
+          label: 'Transkip'
         },
         {
           key: 'aksi',
@@ -132,6 +135,9 @@ export default {
       ],
       search: ''
     }
+  },
+  async fetch ({ store, params }) {
+    await store.dispatch('dosen/GET_CALON')
   },
   computed: {
     cariCalonAsdos () {
